@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea editable="false" prefHeight="500.0" prefWidth="400.0" text="Vervelling door OVapp&#10;&#10;Verzameling van tot nu toe gebruikte technieken&#10;&#10;15 mei 2023" />
+    </children>
+</AnchorPane>

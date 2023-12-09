@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPaneAdministration" prefHeight="773.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sem.zorgapp.java_zorgapp_gui_sem_2.AdministrationController">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="773.0" prefWidth="1200.0">
+        <items>
+          <AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="773.0" minWidth="400.0" prefHeight="773.0" prefWidth="400.0">
+               <children>
+                  <AnchorPane prefHeight="125.0" prefWidth="400.0" style="-fx-background-color: #cedded;">
+                     <children>
+                        <Label fx:id="labelWelcomePerson" layoutX="49.0" layoutY="45.0" prefHeight="36.0" prefWidth="302.0" text="Welcome Person">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="125.0" prefHeight="50.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="textFieldSearch" layoutX="8.0" layoutY="9.0" prefHeight="33.0" prefWidth="321.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="buttonSearch" layoutX="335.0" layoutY="13.0" mnemonicParsing="false" text="Search" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="175.0" prefHeight="600.0" prefWidth="400.0">
+                     <children>
+                        <TableView fx:id="tableViewSearch" onMouseClicked="#onTableViewPatientsSearch" prefHeight="600.0" prefWidth="400.0">
+                          <columns>
+                              <TableColumn fx:id="tableViewSearchPatientNumber" prefWidth="63.0" text="ID" />
+                            <TableColumn fx:id="tableViewSearchFirstName" prefWidth="122.0" text="FirstName" />
+                            <TableColumn fx:id="tableViewSearchSurname" minWidth="6.0" prefWidth="105.0" text="Surname" />
+                              <TableColumn fx:id="tableViewSearchYear" prefWidth="109.0" text="Year" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="750.0" style="-fx-background-color: #cedded;">
+               <children>
+                  <SplitPane fx:id="splitPanePatientInfo" dividerPositions="0.6126582278481013" prefHeight="773.0" prefWidth="792.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ButtonBar prefHeight="40.0" prefWidth="481.0">
+                                <buttons>
+                                    <Button fx:id="buttonFindMedication" mnemonicParsing="false" onAction="#onButtonFindMedication" text="Medication">
+                                       <tooltip>
+                                          <Tooltip text="Find medication" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="buttonFindConsult" mnemonicParsing="false" onAction="#onButtonFindConsult" text="Consult">
+                                       <tooltip>
+                                          <Tooltip text="Find consult" />
+                                       </tooltip>
+                                    </Button>
+                                  <Button fx:id="buttonEditPatient" mnemonicParsing="false" onAction="#onButtonEditPatient" text="Edit Patient" />
+                                    <Button fx:id="buttonHelp" mnemonicParsing="false" onAction="#onButtonHelp" text="Help" />
+                                </buttons>
+                              </ButtonBar>
+                              <ButtonBar layoutY="731.0" prefHeight="40.0" prefWidth="481.0">
+                                <buttons>
+                                    <Button fx:id="buttonAddNote" mnemonicParsing="false" onAction="#onButtonAddNote" text="add Note">
+                                       <tooltip>
+                                          <Tooltip text="Enter text before adding a note to selected patient" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="buttonAddMedNote" mnemonicParsing="false" onAction="#onButtonAddMedNote" text="Medication">
+                                       <tooltip>
+                                          <Tooltip text="Enter text " />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="buttonAddConsult" mnemonicParsing="false" onAction="#onButtonAddConsult" text="Consult">
+                                       <tooltip>
+                                          <Tooltip text="Enter text before adding a consult note to selected patient" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="buttonAddStarNote" mnemonicParsing="false" onAction="#onButtonAddStarNote" text="Star">
+                                       <tooltip>
+                                          <Tooltip text="Enter text before adding a star note to selected patient" />
+                                       </tooltip>
+                                    </Button>
+                                  <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#onButtonClear" prefHeight="24.0" text="Clear">
+                                       <tooltip>
+                                          <Tooltip text="Clear Console" />
+                                       </tooltip>
+                                    </Button>
+                                </buttons>
+                              </ButtonBar>
+                              <TextArea fx:id="textAreaConsole" layoutY="40.0" prefHeight="691.0" prefWidth="481.0" wrapText="true" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TabPane prefHeight="773.0" prefWidth="303.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Person">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="742.0" prefWidth="303.0">
+                                             <children>
+                                                <TextArea fx:id="textAreaPatientPerson" prefHeight="742.0" prefWidth="303.0" text="Please select a patient to continue" wrapText="true" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                    <Tab text="Consult">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextArea fx:id="textAreaPatientConsult" prefHeight="742.0" prefWidth="303.0" text="Please select a patient to continue" wrapText="true" />
+                                             </children></AnchorPane>
+                                      </content>
+                                    </Tab>
+                                    <Tab text="Notes">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextArea fx:id="textAreaPatientNotes" prefHeight="742.0" prefWidth="303.0" text="Please select a patient to continue" wrapText="true" />
+                                             </children></AnchorPane>
+                                      </content>
+                                    </Tab>
+                                    <Tab text="Medication">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextArea fx:id="textAreaPatientMedNotes" prefHeight="742.0" prefWidth="303.0" text="Please select a patient to continue" wrapText="true" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
